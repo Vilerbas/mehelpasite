@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>MeHelpa!</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/stylehome.css'>
+    <link rel="shortcut icon" type="imagex/png" href="assets/mehelpalogoguia.ico">
+    <script src='main.js'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <img style="margin-left: 8vw;" href="home.html" src="/components/images/logo.png" alt="logo" height="120" width="120"></img>
+        <ul class="nav-link">
+           <a href="login.html" class="buttonentrarhome">Entrar</a>
+            <a href="cadastro.html" class="a">Cadastre-se</a>
+            <li href="buscarhelppagina.html"><a href="buscarhelppagina.html" class="ctn"><b class="buscarumahelphome">Buscar uma Help! </b></a></li>
+        </ul>
+        <img src="/components/images/hambg[].png" alt="" class="menu-btn">
+    </nav>
+    <header>
+        <div style="margin-top: 20vh;" class="header-content">
+            <small class="small">O MeHelpa! é para todos</small>
+            <h2 style="margin-top: 20px;">Amplie seus</h2>
+            <h2>horizontes acadêmicos.</h2>
+            <h3>Conecte-se,<span style="color: #3EE8FF;"> Aprenda</span></h3>
+            <h3 style="margin-bottom: 30px;">Conquiste.</h3>
+            <p>Bem-vindo ao MeHelpa! Nossa missão é conectar você a uma</p>
+            <p>comunidade diversificada de estudantes, prontos para</p>
+            <p>oferecer suporte e compartilhar conhecimento para ajudá-lo a ter </p>
+            <p style="margin-bottom: 60px;">sucesso em seus trabalhos acadêmicos.</p>
+            <a href="cadastro.html" class="ctn"><b>Junte-se à comunidade</b></a>
+        </div>
+    </header>
+
+    <!-- == events == -->
+    <section class="events">
+        <div class="title">
+            <img  src="/components/images/brain_9582208.png" alt="imagem centralizada" width="56px" height="48px">
+            <h1>Potencialize seus projetos com a sabedoria de</h1>
+            <h1>seus colegas da universidade!</h1>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h4>PEÇA AJUDA,</h4>
+                <h4>ENCONTRE SOLUÇÕES,</h4>
+                <h4>ALCANCE SUCESSO</h4>
+                <h4>NO SEU PROJETO!</h4>
+                <p style="margin-top: 40px;">Seja no projeto integrador ou em seu TCC,</p>
+                <P>conte com o MeHelpa! para você surpreender!</P>
+            </div>
+            <div class="col2">
+                <img src="/components/images/exmplohh2.jpeg" style="border-radius: 10%;" width="420" height="500">
+            </div>
+        </div>
+
+    </section>
+
+    <section class="footer" style="margin-top: 200px;">
+        <p>
+            MeHelpa!® Education System since 2024</p>
+    </section>
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn')
+        const navlink = document.querySelector('.nav-link')
+
+        menuBtn.addEventListener('click',() => {
+            navlink.classList.toggle('mobile-menu')
+
+            })
+
+    </script>
+</body>
+</html>

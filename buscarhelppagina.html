@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeHelpa!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="formstyle.css">
+    <link rel="shortcut icon" type="imagex/png" href="assets/mehelpalogoguia.ico">
+
+</head>
+
+
+<body>
+    <header class="cabecalho">
+       
+        <a href="firstpage.html" class="cabecalhomenuitem" class="logomehelpa"><img src="assets/mehelpalogo.svg"></a>
+        <h2 class="auxiliotexto" class="cabecalhomenuitem">AUXILIANDO SEU FUTURO!</h2> 
+        <h3 class="cabecalhomenuitem"> <img src="assets/sinonotificacoes.svg"> </h3>
+        <a href="paginaeditarperfil.html" class="cabecalhomenuitem"><img src="assets/perfilusuariohome.svg"></a>
+        <a href="buscarhelppagina.html" class="cabecalhomenuitem"> <img src="assets/botaobusqueumahelp.svg"></a>
+        
+    </header>
+
+    <body>
+        <div class="container">
+            <div class="centralfoto">
+                <img class="fotousuariobusque" src="assets/usuariofoto.png">
+            </div>
+            <h1>Busque uma Help</h1>
+            <form id="forumForm">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" id="nome" name="nome" class="form-input" required>
+
+                <label for="titulo" class="form-label">Título:</label>
+                <input type="text" id="titulo" name="titulo" class="form-input" required>
+
+                <label for="mensagem" class="form-label">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" class="form-textarea" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <script>
+            document.getElementById('forumForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const nome = document.getElementById('nome').value;
+                const titulo = document.getElementById('titulo').value;
+                const mensagem = document.getElementById('mensagem').value;
+    
+                const storedMessages = JSON.parse(localStorage.getItem('forumMessages')) || [];
+                storedMessages.push({ nome, titulo, mensagem });
+                localStorage.setItem('forumMessages', JSON.stringify(storedMessages));
+                
+                window.location.href = 'firstpage.html';
+            });
+        </script>
+    
+    
+
+    
+
+    <main>
+        
+    </main>
+</body>
+</html>

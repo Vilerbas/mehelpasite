@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    margin: auto;
+    display: block;
+}
+.inputnome{
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1D3D78; /* Cor do botão */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #122652; /* Cor do botão ao passar o mouse */
+}
+
+.message {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.message h2 {
+    margin: 0;
+    color: #333;
+}
+
+.message p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.message span {
+    font-size: 0.9em;
+    color: #999;
+}
+
+.response-form {
+    margin-top: 10px;
+}
+
+.responses {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.response {
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.message-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.message-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+.message-box h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.message-box span {
+    font-size: 0.9em;
+    color: #666;
+}
+
+textarea {
+    width: 300px;
+    height: 150px; /* Defina a altura desejada da caixa de texto */
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+

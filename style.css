@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding:0;
+    margin:0;
+    vertical-align:baseline;
+    list-style:none;
+    border:0
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #231f20;
+    height: 110px;
+    width: 100%; /* Faz o cabeçalho ocupar toda a largura */
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove padding */
+    box-sizing: border-box; /* Inclui padding e border na largura e altura */
+}
+
+.logomehelpa{ 
+    padding: 5px 10px;
+}
+.cabecalhomenuitem{
+    padding: 140px;
+    
+}
+
+.auxiliotexto{
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
+.fotoperfilmenu{
+    size: 50px;
+}
+
+.rodape{
+    font-family: "Montserrat", sans-serif;
+    background-color: #231f20; 
+    color: #ffffff; 
+    padding: 20px 0; 
+    text-align: center;
+    position: absolute;
+    width: 100%; 
+    bottom: 0; 
+}
+
+.textboxhelp {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+.btn{
+    height: 100px;
+
+}
+
+.feedestilo {
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    font-size: large;
+    text-align:center'
+}
+
+.immutable-box{
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    font-size: larger;
+    text-align:center'
+}
+
+.boxtexto{
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+.btn{
+    font-family: "Montserrat", sans-serif;
+    background-color: #007bff; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+    border-radius:10px;
+    height: 50px;
+    font-weight: bold;
+}
+
+.texto_digitesuahelp{
+    font-size: larger;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+}
+
+.fotousuariobusque{
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.centralfoto{
+    text-align: center;
+}

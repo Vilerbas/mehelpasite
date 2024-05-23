@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeHelpa - home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="formstyle.css">
+    <link rel="shortcut icon" type="imagex/png" href="assets/mehelpalogoguia.ico">
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="firstpage.html" class="cabecalhomenuitem logomehelpa"><img src="assets/mehelpalogo.svg"></a>
+        <h2 class="auxiliotexto cabecalhomenuitem">AUXILIANDO SEU FUTURO!</h2>
+        <h3 class="cabecalhomenuitem"><img src="assets/sinonotificacoes.svg"></h3>
+        <a href="paginaeditarperfil.html" class="cabecalhomenuitem"><img src="assets/perfilusuariohome.svg"></a>
+        <a href="buscarhelppagina.html" class="cabecalhomenuitem"><img src="assets/botaobusqueumahelp.svg"></a>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Helps Recentes</h1>
+            <div id="messages"></div>
+        </div>
+        
+        <script>
+            function loadMessages() {
+                const messagesContainer = document.getElementById('messages');
+                const storedMessages = JSON.parse(localStorage.getItem('forumMessages')) || [];
+
+                messagesContainer.innerHTML = ''; // Limpar o container antes de renderizar novamente
+
+                if (storedMessages.length === 0) {
+                    messagesContainer.innerHTML = '<p class="no-messages">Nenhuma mensagem encontrada.</p>';
+                    return;
+                }
+
+                // Se houver mais de 3 mensagens, mantenha apenas as últimas 3
+                const displayedMessages = storedMessages.slice(-3).reverse();
+
+                displayedMessages.forEach((message, index) => {
+                    const messageBox = document.createElement('div');
+                    messageBox.classList.add('message-box');
+
+                    const messageElement = document.createElement('div');
+                    messageElement.classList.add('message');
+
+                    const titleElement = document.createElement('h2');
+                    titleElement.textContent = message.titulo;
+
+                    const nameElement = document.createElement('span');
+                    nameElement.textContent = `Por: ${message.nome}`;
+
+                    const messageTextElement = document.createElement('p');
+                    messageTextElement.textContent = message.mensagem;
+
+                    const responseForm = document.createElement('form');
+                    responseForm.classList.add('response-form');
+                    responseForm.innerHTML = `
+                        <label for="responseNome${index}">Nome:</label>
+                        <input type="text" id="responseNome${index}" required>
+                        <label for="responseMensagem${index}">Resposta:</label>
+                        <textarea id="responseMensagem${index}" rows="3" required></textarea>
+                        <button type="submit">Responder</button>
+                    `;
+
+                    responseForm.addEventListener('submit', (event) => {
+                        event.preventDefault();
+                        const responseNome = document.getElementById(`responseNome${index}`).value;
+                        const responseMensagem = document.getElementById(`responseMensagem${index}`).value;
+
+                        if (responseNome && responseMensagem) {
+                            const newResponse = {
+                                nome: responseNome,
+                                mensagem: responseMensagem
+                            };
+
+                            if (!message.responses) {
+                                message.responses = [];
+                            }
+                            message.responses.push(newResponse);
+
+                            storedMessages[storedMessages.length - 1 - index] = message;
+                            localStorage.setItem('forumMessages', JSON.stringify(storedMessages));
+                            loadMessages();
+                        }
+                    });
+
+                    const viewResponsesButton = document.createElement('button');
+                    viewResponsesButton.textContent = 'Visualizar Respostas';
+                    viewResponsesButton.classList.add('view-responses-button');
+                    viewResponsesButton.addEventListener('click', () => {
+                        const responsesContainer = messageElement.querySelector('.responses');
+                        if (responsesContainer.style.display === 'none') {
+                            responsesContainer.style.display = 'block';
+                        } else {
+                            responsesContainer.style.display = 'none';
+                        }
+                    });
+
+                    const responsesContainer = document.createElement('div');
+                    responsesContainer.classList.add('responses');
+                    responsesContainer.style.display = 'none';
+
+                    if (message.responses) {
+                        message.responses.forEach(response => {
+                            const responseElement = document.createElement('div');
+                            responseElement.classList.add('response');
+
+                            const responseNameElement = document.createElement('span');
+                            responseNameElement.textContent = `Por: ${response.nome}`;
+
+                            const responseTextElement = document.createElement('p');
+                            responseTextElement.textContent = response.mensagem;
+
+                            responseElement.appendChild(responseNameElement);
+                            responseElement.appendChild(responseTextElement);
+
+                            responsesContainer.appendChild(responseElement);
+                        });
+                    }
+
+                    messageElement.appendChild(titleElement);
+                    messageElement.appendChild(nameElement);
+                    messageElement.appendChild(messageTextElement);
+                    messageElement.appendChild(responseForm);
+                    messageElement.appendChild(viewResponsesButton);
+                    messageElement.appendChild(responsesContainer);
+
+                    messageBox.appendChild(messageElement);
+                    messagesContainer.appendChild(messageBox);
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', loadMessages);
+        </script>
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const storedMessage = JSON.parse(localStorage.getItem('currentMessage'));
+
+        if (storedMessage) {
+            const messageContainer = document.getElementById('messageContainer');
+            messageContainer.innerHTML = `
+                <h2>${storedMessage.titulo}</h2>
+                <p><strong>Nome:</strong> ${storedMessage.nome}</p>
+                <p>${storedMessage.mensagem}</p>
+            `;
+        }
+    });
+</script>
+    </main>
+</body>
+</html>
